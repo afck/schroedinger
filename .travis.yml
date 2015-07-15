@@ -5,7 +5,8 @@ script: scons test && ./test && scons
 
 install:
 # C++11 support
-- if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
+- export CXX="g++-4.8" CC="gcc-4.8"
+- sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 90
 # SDL2
 - curl -O http://www.libsdl.org/release/SDL2-2.0.0.tar.gz
 - tar -xzvf SDL2-2.0.0.tar.gz
