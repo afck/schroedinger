@@ -13,11 +13,15 @@ mouse.
 use the GPU, have a proper GUI, and be able to input and output the data from
 and to files. Feel free to contribute!)
 
+![Screenshot](images/screenshot0.png)
+
 
 ## Use
 
 You can draw a static potential with the left mouse button and modify the wave
 function with the right one.
+
+![Screenshot](images/screenshot1.png)
 
 The program is written in C++, using the [SDL](https://www.libsdl.org/) library,
 and can be built using [CMake](http://www.cmake.org/) or
