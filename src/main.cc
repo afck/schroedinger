@@ -74,11 +74,12 @@ int main(int argc, char *argv[]) {
   const bool bench = argc > 4 && strcmp(argv[4], "bench") == 0;
   const int skipFrames = 5;
 
-  SDL_Window *window;
-  SDL_Renderer *renderer;
+  SDL_Window* window;
+  SDL_Renderer* renderer;
   SDL_Init(SDL_INIT_VIDEO); // TODO: Handle error.
   SDL_CreateWindowAndRenderer(width * scale, height * scale, 0, &window,
                               &renderer);
+  SDL_SetWindowTitle(window, "Schrödinger-Poisson equation");
   SDL_Texture *texture =
       SDL_CreateTexture(renderer, SDL_PIXELFORMAT_ARGB8888,
                         SDL_TEXTUREACCESS_STREAMING, width, height);
