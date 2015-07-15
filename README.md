@@ -26,11 +26,11 @@ function with the right one.
 The program is written in C++, using the [SDL](https://www.libsdl.org/) library,
 and can be built using [CMake](http://www.cmake.org/) or
 [SCons](http://www.scons.org/). E. g. on Ubuntu or Debian GNU/Linux, the
-following should install the dependencies and download, build and run the
-program:
+following should download, build and run the program, provided that the
+packages `libsdl2-dev`, `git`, `scons` and `gcc` are installed:
 ```
-sudo apt-get install libsdl2-dev scons git gcc libcppunit-dev
 git clone https://github.com/afck/schroedinger.git
+cd schroedinger
 scons
 ./schr
 ```
