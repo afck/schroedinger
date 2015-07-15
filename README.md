@@ -29,7 +29,7 @@ and can be built using [CMake](http://www.cmake.org/) or
 following should install the dependencies and download, build and run the
 program:
 ```
-sudo apt-get install libsdl2-dev scons git gcc libunittest++-dev
+sudo apt-get install libsdl2-dev scons git gcc libcppunit-dev
 git clone https://github.com/afck/schroedinger.git
 scons
 ./schr
