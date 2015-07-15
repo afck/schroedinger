@@ -1,24 +1,22 @@
 language: cpp
 compiler:
-- clang
 - gcc
 script: scons test && ./test && scons
-before_install:
-# g++4.8.1
-- if [ "$CXX" == "g++" ]; then sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test; fi
-# clang 3.4
-- if [ "$CXX" == "clang++" ]; then sudo add-apt-repository -y ppa:h-rayflood/llvm; fi
-- sudo apt-get update -qq
 
 install:
-# g++4.8.1
-- if [ "$CXX" = "g++" ]; then sudo apt-get install -qq g++-4.8; fi
-- if [ "$CXX" = "g++" ]; then export CXX="g++-4.8"; fi
-# clang 3.4
-- if [ "$CXX" == "clang++" ]; then sudo apt-get install --allow-unauthenticated -qq clang-3.4; fi
-- if [ "$CXX" == "clang++" ]; then export CXX="clang++-3.4"; fi
-- sudo apt-get install -y libunittest++-dev
+# C++11 support
+- if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
 # SDL2
 - curl -O http://www.libsdl.org/release/SDL2-2.0.0.tar.gz
 - tar -xzvf SDL2-2.0.0.tar.gz
 - (cd SDL2-2.0.0 && ./configure && make && sudo make install)
+
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - gcc-4.8
+    - g++-4.8
+    - clang
+    - libunittest++-dev
