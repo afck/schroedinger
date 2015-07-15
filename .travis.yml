@@ -4,9 +4,12 @@ compiler:
 - gcc
 script: scons test && ./test && scons
 before_install:
+- sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 - sudo apt-get update -qq
-- sudo apt-get install -y libunittest++-dev
 install:
+- sudo apt-get install -y libunittest++-dev g++-4.8
+# C++11 support
+- export CXX="g++-4.8"
 # SDL2
 - curl -O http://www.libsdl.org/release/SDL2-2.0.0.tar.gz
 - tar -xzvf SDL2-2.0.0.tar.gz
